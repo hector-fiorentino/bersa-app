@@ -33,7 +33,7 @@ var app = {
     // The scope of 'this' is the event. In order to call the 'receivedEvent'
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {
-        /*navigator.geolocation.getCurrentPosition(onSuccess, onError);*/
+        
         $("#catalogo").on("pageshow",function(){
             //alert("ok");
             //$("#ifcatalogo").css("height",$('body').height());
@@ -78,12 +78,10 @@ var app = {
         $("#geo").on("pageshow",function(){
             navigator.geolocation.getCurrentPosition(onSuccess, onError);
             $('#stores').hide();
-            alert("OK");
         })
         function onSuccess(position){
             $('.buscando').hide();
-            alert(JSON.stringify(position));
-            alert('no');
+            alert(position.coords.latitude);
             lat = position.coords.latitude;
             lon = position.coords.longitude;
             var distancia = 15;
@@ -108,7 +106,7 @@ var app = {
         }
         
         function onError(error){
-            alert("ERROR");
+            alert("ERROR:"+error.message);
             $('#resgeo').html("<strong>No hemos podido encontrar su ubicación</strong><br><p>Aseguresé de tener activo el GPS</p>");
         }
         //app.receivedEvent('deviceready');
