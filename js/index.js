@@ -33,23 +33,27 @@ var app = {
     // The scope of 'this' is the event. In order to call the 'receivedEvent'
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {
-        
+            
+        $("body").on('click','.logo-wh',function(event){
+            event.preventDefault();
+            $.mobile.navigate("#pagemenuppal");
+            console.log('ir al home');
+        });
+        $("#mypanel").panel();
         $("#catalogo").on("pageshow",function(){
-            //alert("ok");
-            //$("#ifcatalogo").css("height",$('body').height());
-            //loadPage("http://www.bersa.com.ar/pistolas.html");
+
         });
 
         $("#mapa").on("pageshow",function(){
             //window.location="maps.html";
-            $.getJSON('http://appbersa.com.ar.brainloaded.com.ar/store.php?id=2', function(data){
+            $.getJSON('http://appbersa.com.ar.brainloaded.com.ar/store.php?id='+ID, function(data){
                 if(data){
                     var lat2 = data.latitude;
                     var lon2 = data.longitude;
                     var myLatlng = new google.maps.LatLng(lat2,lon2);
                     var mapOptions = {
                       center: myLatlng,
-                      zoom: 15,
+                      zoom: 12,
                       mapTypeId: google.maps.MapTypeId.ROADMAP
                     };
                     var map = new google.maps.Map(document.getElementById("mapagoogle"),
@@ -67,6 +71,9 @@ var app = {
                           map: map,
                           icon: image2
                     });
+                    $("#namestore").empty().html(data.store);
+                    $("#locationstore").empty().html(data.location);
+                    $("#addressstore").empty().html(data.address);
                 }
             })
         })
@@ -78,18 +85,19 @@ var app = {
         $("#geo").on("pageshow",function(){
             navigator.geolocation.getCurrentPosition(onSuccess, onError);
             $('#stores').hide();
+            $('#resgeo').hide();
         })
         function onSuccess(position){
             $('.buscando').hide();
-            alert(position.coords.latitude);
             lat = position.coords.latitude;
             lon = position.coords.longitude;
             var distancia = 15;
-            alert(lat+" & "+lon);
+            console.log(lat+" & "+lon);
             $.getJSON('http://appbersa.com.ar.brainloaded.com.ar/cercanos.php?lat='+lat+'&lon='+lon+'&k='+distancia,function(data){
                 if(data){
                     $('#stores').empty();
                     $('#stores').show();
+                    $('#resgeo').show();
                     var renglon = "";
                     $(data.stores).each(function(){
                         renglon  =  '<li><a href="#mapa" rel="' + this.id + '" class="mapas">';
@@ -101,26 +109,32 @@ var app = {
                     })
                     $('#stores').listview('refresh');
                 }
+            }).fail(function(error){
+                $.getJSON('http://appbersa.com.ar.brainloaded.com.ar/cercanos.php?lat='+lat+'&lon='+lon+'&k='+distancia,function(data){
+                if(data){
+                    $('#stores').empty();
+                    $('#stores').show();
+                    var renglon = "";
+                    $(data.stores).each(function(){
+                        renglon  =  '<li><a href="#mapa" rel="' + this.id + '" class="mapas">';
+                        renglon +=  '<h2 class="left">' + this.store + ' - <strong>' + this.km + 'Km</strong></h2><br>';
+                        renglon +=  '<p class="left">' + this.address +' - ' + this.location + '</p>'
+                        renglon +=  '<span class="pe-7s-map right"></span>'
+                        renglon +=  '</a></li>';
+                        $('#stores').append(renglon);
+                    })
+                    $('#stores').listview('refresh');
+                }
+                }).fail(function(error){
+                    alert("Error de conexión con el servidor.");
+                })
             })
 
         }
         
         function onError(error){
-            alert("ERROR:"+error.message);
-            $('#resgeo').html("<strong>No hemos podido encontrar su ubicación</strong><br><p>Aseguresé de tener activo el GPS</p>");
+            alert("<strong>No hemos podido encontrar su ubicación</strong><br><p>Aseguresé de tener activo el GPS</p>");
         }
-        //app.receivedEvent('deviceready');
-    }/*/*,
-    // Update DOM on a Received Event
-    receivedEvent: function(id) {
-        /*var parentElement = document.getElementById(id);
-        var listeningElement = parentElement.querySelector('.listening');
-        var receivedElement = parentElement.querySelector('.received');
-
-        listeningElement.setAttribute('style', 'display:none;');
-        receivedElement.setAttribute('style', 'display:block;');
-
-        console.log('Received Event: ' + id);*/
-   // }
+    }
 };
 

@@ -42,14 +42,14 @@
         <div data-role="page" id="pagemenuppal">
             
             <!-- HEADER -->
-            <div data-role="header" data-position="fixed" data-theme="z">
+            <div data-role="header" data-theme="z">
                <!-- <a href="#mypanel" class="ui-btn-left options" data-theme="a"><span class="pe-7s-menu"></a> -->
-               <h1><img src="img/logo.png"></h1>
+               <h1><img src="img/logo-xhdpi.png" id="logop"></h1>
                <!-- <a href="#" class="ui-btn-right closeSession salir" data-theme="a"><span class="pe-7s-delete-user"></span></a> -->
             </div>
             <!-- END HEADER -->
 
-            <div role="main" class="ui-content" >
+            <div role="main" class="ui-content hide" >
                 <div class="swiper-container">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide"><img src="img/carousel/modelo1.png"/></div>
@@ -60,7 +60,7 @@
                 </div>
             </div><!-- /content -->
 
-        <div data-role="footer" data-theme="z" data-position="fixed">
+        <div data-role="footer" data-theme="z">
             <ul id="zocalo">
                 <li><a href="#catalogo" class="catalogo">Pistolas</a></li>
                 <li><a href="#geo" class="geo">Donde?</a></li>
@@ -76,14 +76,206 @@
             
             <!-- HEADER -->
             <div data-role="header" data-position="fixed" data-theme="b">
-               <a href="#mypanel" class="ui-btn-left options" data-theme="b"><span class="pe-7s-menu"></a>
+               <a href="#mypanel" class="ui-btn-left options" data-theme="b"><span class="pe-7s-menu"></span></a>
                <h1><img src="img/logo-white.png" class="logo-wh"></h1>
-               <a href="#" class="ui-btn-right catalogo-icon" data-theme="a"><img src="img/catalogo-icon-xhdpi.png" class="page-icon"></a>
+               <a href="#myfilter" class="ui-btn-right filtrar" data-theme="b"><span class="pe-7s-filter"></span></a>
             </div>
             <!-- END HEADER -->
+            <!-- MENU FILTROS -->
+            <div data-role="panel" data-display="push" data-position="right" id="myfilter">
+              <p class="nave">Filtrar</p>
+                 <ul data-role="listview" data-inset="true" class="ui-listview ui-listview-inset ui-corner-all" data-theme="a" >
+                     <li class="ui-li-has-count"><a class="calibre" data-calibre="22">.22</a></li>
+                     <li class="ui-li-has-count"><a class="calibre" data-calibre="380">.380</a></li>
+                     <li class="ui-li-has-count"><a class="calibre" data-calibre="9">9mm</a></li>
+                     <li class="ui-li-has-count"><a class="calibre" data-calibre="40">.40</a></li>
+                     <li class="ui-li-has-count"><a class="calibre" data-calibre="45">.45</a></li>
+                 </ul>
+                 <ul data-role="listview" data-inset="true" class="ui-listview ui-listview-inset ui-corner-all" data-theme="a" >
+                    <li class="ui-li-has-count"><a class="uso civi" data-uso="civil">Civil</a></li>
+                    <li class="ui-li-has-count"><a class="uso depo" data-uso="deportivo">Deportivo</a></li>
+                    <li class="ui-li-has-count"><a class="uso fuer" data-uso="fuerza">Fuerza de Seguridad</a></li>
+                </ul>
+                <ul data-role="listview" data-inset="true" class="ui-listview ui-listview-inset ui-corner-all" data-theme="a" >
+                    <li class="ui-li-has-count"><a class="color niqu" data-color="niquel"></a></li>
+                    <li class="ui-li-has-count"><a class="color dost" data-color="dostonos"></a></li>
+                    <li class="ui-li-has-count"><a class="color pavo" data-color="pavon"></a></li>
+                     <!-- <li class="ui-last-child"><a href="#" class="actualizar mm">Actualizar</a></li> -->
+                 </ul>
+                 <a id="clear">Sin filtro</a>
+                 <a href="#mypanel" class="cerrar" data-rel="close"><span class="pe-7s-close-circle"></span></a>
+            </div><!-- /panel -->
+           
+            <!-- END MENU FILTROS -->
 
             <div role="main" class="ui-content" style="padding:0px">
-                <iframe src="http://www.bersa.com.ar/pistolas.html" border="0" width="100%" style="margin-top:-100px" id="ifcatalogo"></iframe>
+                <div class="clear"></div>
+                 <div class="products-top">
+                    <div class="grid_1_of_4 images_1_of_4" data-calibre="380" data-uso="civil" data-color="dostonos" style="border-bottom:1px solid #ccc;">
+                        <a href="pistola-bersa-thunder-380.html">
+                            <img src="img/th_armas/t380duo2.jpg" alt="Bersa Thunder 380 dos tonos"><span class="zoom-icon"></span>
+                            <img src="img/logos/thunder-380.gif" alt="Bersa Thunder 380 dos tonos">
+                        </a>
+                    </div>
+                    <div class="grid_1_of_4 images_1_of_4" data-calibre="380" data-uso="civil" data-color="niquel" style="border-bottom:1px solid #ccc;">
+                        <a href="pistola-bersa-thunder-380.html">
+                            <img src="img/th_armas/t380niquel2.jpg" alt="Bersa Thunder 380 niquel"><span class="zoom-icon"></span>
+                            <img src="img/logos/thunder-380.gif" alt="Bersa Thunder 380 niquel">
+                        </a>
+                    </div>
+                    <div class="grid_1_of_4 images_1_of_4" data-calibre="380" data-uso="civil" data-color="dostonos" style="border-bottom:1px solid #ccc;">
+                        <a href="pistola-bersa-thunder-380-plus.html">
+                            <img src="img/th_armas/t380pduo2.jpg" alt="Bersa Thunder 380 Plus dos tonos"><span class="zoom-icon"></span>
+                            <img src="img/logos/thunder-380-plus.gif" alt="Bersa Thunder 380 Plus dos tonos">
+                        </a>
+                    </div>
+                    <div class="grid_1_of_4 images_1_of_4" data-calibre="380" data-uso="civil" data-color="pavon" style="border-bottom:1px solid #ccc;">
+                        <a href="pistola-bersa-thunder-380-plus.html">
+                            <img src="img/th_armas/t380ppavon2.jpg" alt="Bersa Thunder 380 Plus Pavon"><span class="zoom-icon"></span> 
+                            <img src="img/logos/thunder-380-plus.gif" alt="Bersa Thunder 380 Plus Pavon">
+                        </a>
+                        
+                    </div>
+                    <div class="grid_1_of_4 images_1_of_4" data-calibre="380" data-uso="civil" data-color="niquel" style="border-bottom:1px solid #ccc;">
+                        <a href="pistola-bersa-thunder-380-cc.html">
+                            <img src="img/th_armas/t380ccniquel2.jpg" alt="Bersa Thunder 380CC niquel"><span class="zoom-icon"></span>
+                            <img src="img/logos/thunder-380-CC.gif" alt="Bersa Thunder 380CC niquel">
+                        </a>
+                        
+                    </div>
+                    <div class="grid_1_of_4 images_1_of_4" data-calibre="380" data-uso="civil" data-color="pavon" style="border-bottom:1px solid #ccc;">
+                        <a href="pistola-bersa-thunder-380-cc.html"><img src="img/th_armas/t380ccpavon2.jpg" alt="Bersa Thunder 380CC pavón"><span class="zoom-icon"></span>
+                        <img src="img/logos/thunder-380-CC.gif" alt="Bersa Thunder 380CC pavón"></a>
+                        
+                    </div>
+                    <div class="grid_1_of_4 images_1_of_4" data-calibre="9" data-uso="fuerza" data-color="dostonos" style="border-bottom:1px solid #ccc;">
+                        <a href="pistola-bersa-thunder-9-pro.html">
+                            <img src="img/th_armas/t9pduo2.jpg" alt="Bersa Thunder 9 PRO dos tonos"><span class="zoom-icon"></span>
+                            <img src="img/logos/thunder-9-pro.gif" alt="Bersa Thunder 9 PRO dos tonos">
+                        </a>
+                    </div>
+                    <div class="grid_1_of_4 images_1_of_4" data-calibre="9" data-uso="fuerza" data-color="pavon" style="border-bottom:1px solid #ccc;">
+                        <a href="pistola-bersa-thunder-9-pro.html">
+                            <img src="img/th_armas/t9ppavon2.jpg" alt=""><span class="zoom-icon"></span> 
+                            <img src="img/logos/thunder-9-pro.gif" alt="Thunder 9 PRO pavón">
+                        </a>
+                        
+                    </div>
+                    <div class="grid_1_of_4 images_1_of_4" data-calibre="9" data-uso="fuerza" data-color="dostonos" style="border-bottom:1px solid #ccc;">
+                        <a href="pistola-bersa-thunder-9-ultra-compact-pro.html">
+                            <img src="img/th_armas/t9upduo2.jpg" alt="Bersa Thunder 9 Ultra Compact PRO dos tonos"><span class="zoom-icon"></span>
+                            <img src="img/logos/thunder-9-UCP.gif" alt="Bersa Thunder 9 Ultra Compact PRO dos tonos">
+                        </a>
+                        
+                    </div>
+                    <div class="grid_1_of_4 images_1_of_4" data-calibre="9" data-uso="fuerza" data-color="pavon" style="border-bottom:1px solid #ccc;">
+                        <a href="pistola-bersa-thunder-9-ultra-compact-pro.html"><img src="img/th_armas/t9uppavon2.jpg" alt="Bersa Thunder 9 Ultra Compact PRO pavón"><span class="zoom-icon"></span>
+                        <img src="img/logos/thunder-9-UCP.gif" alt="Bersa Thunder 9 Ultra Compact PRO pavón"></a>
+                        
+                    </div>
+                   <div class="grid_1_of_4 images_1_of_4" data-calibre="22" data-uso="civil" data-color="dostonos" style="border-bottom:1px solid #ccc;">
+                      <a href="pistola-bersa-thunder-22.html">
+                        <img src="img/th_armas/t22duo2.jpg" alt="Bersa Thunder 22 dos tonos"><span class="zoom-icon"></span>
+                        <img src="img/logos/thunder-22.gif" alt="Bersa Thunder 22 dos tonos">
+                      </a>
+                      
+                   </div>
+                   <div class="grid_1_of_4 images_1_of_4" data-calibre="22" data-uso="deportivo"  data-color="pavon" style="border-bottom:1px solid #ccc;">
+                      <a href="pistola-bersa-thunder-22-6.html">
+                        <img src="img/th_armas/t22inox2.jpg" alt="Bersa Thunder 22-6 pavon"><span class="zoom-icon"></span>
+                        <img src="img/logos/thunder-22-6.gif" alt="Bersa Thunder 22-6 pavon">
+                      </a>
+                      
+                   </div>
+                   <div class="grid_1_of_4 images_1_of_4" data-calibre="22" data-uso="civil" data-color="niquel" style="border-bottom:1px solid #ccc;">
+                      <a href="pistola-bersa-thunder-22.html">
+                        <img src="img/th_armas/t22niquel2.jpg" alt="Bersa Thunder 22 nickel"><span class="zoom-icon"></span>
+                        <img src="img/logos/thunder-22.gif" alt="Bersa Thunder 22 nickel">
+                      </a>
+                      
+                  </div>
+                  <div class="grid_1_of_4 images_1_of_4" data-calibre="22" data-uso="civil" data-color="pavon" style="border-bottom:1px solid #ccc;">
+                     <a href="pistola-bersa-thunder-22.html">
+                        <img src="img/th_armas/t22pavon2.jpg" alt="Bersa Thunder 22 dos pavón"><span class="zoom-icon"></span>
+                        <img src="img/logos/thunder-22.gif" alt="Bersa Thunder 22 dos pavón">
+                     </a>
+                 </div>
+                 
+                  <div class="grid_1_of_4 images_1_of_4" data-calibre="40" data-uso="civil" data-color="pavon" style="border-bottom:1px solid #ccc;">
+                     <a href="pistola-bersa-thunder-40-pro.html">
+                        <img src="img/th_armas/t40ppavon2.jpg" alt=""><span class="zoom-icon"></span>
+                        <img src="img/logos/thunder-40-pro.gif" alt="Thunder 40 pavón">
+                     </a>
+                 </div>
+                  <div class="grid_1_of_4 images_1_of_4" data-calibre="40" data-uso="civil" data-color="dostonos" style="border-bottom:1px solid #ccc;">
+                     <a href="pistola-bersa-thunder-40-pro.html">
+                        <img src="img/th_armas/t40pduo2.jpg" alt=""><span class="zoom-icon"></span>
+                        <img src="img/logos/thunder-40-pro.gif" alt="Thunder 40 dos tonos">
+                     </a>
+                     
+                 </div>
+                  <div class="grid_1_of_4 images_1_of_4" data-calibre="40" data-uso="civil" data-color="pavon" style="border-bottom:1px solid #ccc;">
+                     <a href="pistola-bersa-thunder-40-ultra-compact-pro.html">
+                        <img src="img/th_armas/t40uppavon2.jpg" alt=""><span class="zoom-icon"></span>
+                        <img src="img/logos/thunder-40-UPC.gif" alt="Thunder 40 Ultra Compact Pro pavón">
+                     </a>
+                     
+                 </div>
+                 <div class="grid_1_of_4 images_1_of_4" data-calibre="40" data-uso="civil" data-color="dostonos" style="border-bottom:1px solid #ccc;">
+                     <a href="pistola-bersa-thunder-40-ultra-compact-pro.html">
+                        <img src="img/th_armas/t40upduo2.jpg" alt=""><span class="zoom-icon"></span>
+                        <img src="img/logos/thunder-40-UPC.gif" alt="Thunder 40 Ultra Compact Pro dos tonos">
+                     </a>
+                     
+                 </div>
+                 <div class="grid_1_of_4 images_1_of_4" data-calibre="45" data-uso="civil" data-color="pavon" style="border-bottom:1px solid #ccc;">
+                     <a href="pistola-bersa-thunder-45-ultra-compact-pro.html">
+                        <img src="img/th_armas/t45uppavon2.jpg" alt=""><span class="zoom-icon"></span>
+                        <img src="img/logos/thunder-45-UPC.gif" alt="Thunder 45 Ultra Compact pavón">
+                     </a>
+                 </div>
+                 <div class="grid_1_of_4 images_1_of_4" data-calibre="45" data-uso="civil" data-color="dostonos" style="border-bottom:1px solid #ccc;">
+                     <a href="pistola-bersa-thunder-45-ultra-compact-pro.html">
+                        <img src="img/th_armas/t45upduo2.jpg" alt=""><span class="zoom-icon"></span>
+                        <img src="img/logos/thunder-45-UPC.gif" alt="Thunder 45 Ultra Compact dos tonos">
+                     </a>
+                 </div>
+                 <div class="grid_1_of_4 images_1_of_4" data-calibre="9" data-uso="civil" data-color="pavon" style="border-bottom:1px solid #ccc;">
+                     <a href="pistola-bersa-bp9cc.html">
+                        <img src="img/th_armas/BP9CC-Pav-1.jpg" alt=""><span class="zoom-icon"></span>
+                        <img src="img/logos/BP9CC.gif" alt="BP9CC dos tonos">
+                     </a>
+                 </div>
+                 <div class="grid_1_of_4 images_1_of_4" data-calibre="9" data-uso="civil" data-color="dostonos" style="border-bottom:1px solid #ccc;">
+                     <a href="pistola-bersa-bp9cc.html">
+                        <img src="img/th_armas/BP9CC-Duo-1.jpg" alt=""><span class="zoom-icon"></span>
+                        <img src="img/logos/BP9CC.gif" alt="BP9CC dos tonos">
+                     </a>
+                 </div>
+                    <div class="grid_1_of_4 images_1_of_4" data-calibre="40" data-uso="civil" data-color="pavon" style="border-bottom:1px solid #ccc;">
+                     <a href="pistola-bersa-bp40cc.html">
+                        <img src="img/th_armas/BP40CC-Pav-1.jpg" alt=""><span class="zoom-icon"></span>
+                        <img src="img/logos/BP9CC.gif" alt="BP9CC dos tonos">
+                     </a>
+                 </div>
+                        <div class="grid_1_of_4 images_1_of_4" data-calibre="380" data-uso="civil" data-color="pavon" style="border-bottom:1px solid #ccc;">
+                     <a href="pistola-bersa-bp380cc.html">
+                        <img src="img/th_armas/BP380CC-Pav-1.jpg" alt=""><span class="zoom-icon"></span>
+                        <img src="img/logos/BP9CC.gif" alt="BP9CC dos tonos">
+                     </a>
+                 </div>
+                 
+                      <div class="grid_1_of_4 images_1_of_4" data-calibre="9" data-uso="deportivo" data-color="dostonos" style="border-bottom:1px solid #ccc;">
+                     <a href="pistola-bersa-thunder-9-pro-xt.html">
+                        <img src="img/th_armas/t9proxt.jpg" alt=""><span class="zoom-icon"></span>
+                        <img src="img/logos/thunder-9-proXT.gif" alt="BP9CC dos tonos">
+                     </a>
+                 </div>
+                 </div>
+
+                <div class="clear"></div> 
+            </div>
+           </div>
             </div><!-- /content -->
 
         <!--<div data-role="footer" data-theme="z" data-position="fixed">
@@ -92,16 +284,16 @@
 
     <!-- Geo Page -->
         <div data-role="page" id="geo">
-            
             <!-- HEADER -->
             <div data-role="header" data-position="fixed" data-theme="b">
-               <a href="#mypanel" class="ui-btn-left options" data-theme="b"><span class="pe-7s-menu"></a>
+               <a href="#mypanel" data-display="push" class="ui-btn-left options" data-theme="b"><span class="pe-7s-menu"></a>
                <h1><img src="img/logo-white.png" class="logo-wh"></h1>
                <a href="#" class="ui-btn-right catalogo-icon" data-theme="a"><img src="img/geo-icon-xhdpi.png" class="page-icon"></a>
             </div>
             <!-- END HEADER -->
 
             <div role="main" class="ui-content" >
+                <div id="resgeo">Distribuidores Bersa más próximos:</div>
                 <div class="buscando">
                     <span class="pe-7s-map-marker"></span>
                     <p>Buscando su ubicación</p>
@@ -129,6 +321,9 @@
             <div role="main" class="ui-content" >
                 <div id="mapagoogle" style="width:100%;height:300px">
                 </div>
+                <h1 id="namestore"></h1>
+                <h4 id="locationstore"></h4>
+                <p id="addressstore"></p>
             </div><!-- /content -->
 
         <!--<div data-role="footer" data-theme="z" data-position="fixed">
@@ -153,23 +348,79 @@
         <!--<div data-role="footer" data-theme="z" data-position="fixed">
         </div> /footer -->
     </div><!-- / Manuales page -->
-
+            <div data-role="panel" data-display="overlay" id="mypanel">
+              <p class="nave">Navegación</p>
+                 <ul data-role="listview" data-inset="true" class="ui-listview ui-listview-inset ui-corner-all" data-theme="a" >
+                     <li class="ui-first-child"><a href="#pagemenuppal">Home</a></li>
+                     <li class="ui-li-has-count"><a href="#catalogo">Pistolas</a></li>
+                     <li class="ui-li-has-count"><a href="#geo">Dónde?</a></li>
+                     <li class="ui-li-has-count"><a href="#manuales">Manuales</a></li>
+                     <!-- <li class="ui-last-child"><a href="#" class="actualizar mm">Actualizar</a></li> -->
+                     <a href="#mypanel" class="cerrar" data-rel="close"><span class="pe-7s-close-circle"></span></a>
+                 </ul>
+            </div><!-- /panel -->
         <!-- <div id="geolocation" style="background-color:#000;width:320px; height:500px"></div> -->
-        <script type="text/javascript" src="cordova.js"></script>
+        <!--<script type="text/javascript" src="cordova.js"></script>-->
         <script type="text/javascript" src="js/index.js"></script>
         <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js"></script>
         <script type="text/javascript">
-            app.initialize();
+            /*app.initialize();*/
             var ID  = 0;
             var lat = 0;
             var lon = 0;
             $(document).ready(function(){
                 //alert($('body').height());
+                $("[data-role=panel]").panel().enhanceWithin();
                 $('#ifcatalogo').css('height',$('body').height()+100);
+
                 var swiper = new Swiper('.swiper-container', {
                     pagination: '.swiper-pagination',
                     paginationClickable: true
                 });
+                $('.ui-content').delay(1000).removeClass('hide');
+
+            $('#filtros a.calibre').click(function(){
+                $('#filtros a').removeClass('current');
+                $(this).addClass('current');
+                var exceptcal = $(this).attr('data-calibre');
+                $('.images_1_of_4').each(function(i){
+                    if($(this).attr('data-calibre') == exceptcal && $(this).is(':hidden')){
+                        $(this).css('display','block');
+                    }else if($(this).attr('data-calibre') !== exceptcal){
+                        $(this).css('display','none');
+                    }       
+                });     
+           });
+           $('#filtros a.uso').click(function(){
+                $('#filtros a').removeClass('current');
+                $(this).addClass('current');
+                var exceptuso = $(this).attr('data-uso');
+                $('.images_1_of_4').each(function(i){
+                    if($(this).attr('data-uso') == exceptuso && $(this).is(':hidden')){
+                        $(this).css('display','block');
+                    }else if($(this).attr('data-uso') !== exceptuso){
+                        $(this).css('display','none');
+                    }       
+                });
+           });
+           $('#filtros a.color').click(function(){
+                $('#filtros a').removeClass('current');
+                $(this).addClass('current');
+                var exceptcol = $(this).attr('data-color');
+                $('.images_1_of_4').each(function(i){
+                    if($(this).attr('data-color') == exceptcol && $(this).is(':hidden')){
+                        $(this).css('display','block');
+                    }else if($(this).attr('data-color') !== exceptcol){
+                        $(this).css('display','none');
+                    }       
+                });
+           });
+
+           
+           $('a#clear').click(function(){
+                $('#filtros a').removeClass('current');
+                $('.images_1_of_4').css('display','block');
+           });
         });
         </script>
     </body>
