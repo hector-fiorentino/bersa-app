@@ -82,28 +82,23 @@
             </div>
             <!-- END HEADER -->
             <!-- MENU FILTROS -->
-            <div data-role="panel" data-display="push" data-position="right" id="myfilter">
-              <p class="nave">Filtrar</p>
-                 <ul data-role="listview" data-inset="true" class="ui-listview ui-listview-inset ui-corner-all" data-theme="a" >
-                     <li class="ui-li-has-count"><a class="calibre" data-calibre="22">.22</a></li>
-                     <li class="ui-li-has-count"><a class="calibre" data-calibre="380">.380</a></li>
-                     <li class="ui-li-has-count"><a class="calibre" data-calibre="9">9mm</a></li>
-                     <li class="ui-li-has-count"><a class="calibre" data-calibre="40">.40</a></li>
-                     <li class="ui-li-has-count"><a class="calibre" data-calibre="45">.45</a></li>
-                 </ul>
-                 <ul data-role="listview" data-inset="true" class="ui-listview ui-listview-inset ui-corner-all" data-theme="a" >
-                    <li class="ui-li-has-count"><a class="uso civi" data-uso="civil">Civil</a></li>
-                    <li class="ui-li-has-count"><a class="uso depo" data-uso="deportivo">Deportivo</a></li>
-                    <li class="ui-li-has-count"><a class="uso fuer" data-uso="fuerza">Fuerza de Seguridad</a></li>
-                </ul>
-                <ul data-role="listview" data-inset="true" class="ui-listview ui-listview-inset ui-corner-all" data-theme="a" >
-                    <li class="ui-li-has-count"><a class="color niqu" data-color="niquel"></a></li>
-                    <li class="ui-li-has-count"><a class="color dost" data-color="dostonos"></a></li>
-                    <li class="ui-li-has-count"><a class="color pavo" data-color="pavon"></a></li>
+            <div data-role="panel" data-display="overlay" data-position="right" id="myfilter">
+                    <p>Calibre</p>
+                    <a class="calibre cal1" data-calibre="22">.22</a>
+                    <a class="calibre cal2" data-calibre="380">.380</a>
+                    <a class="calibre cal3" data-calibre="9">9mm</a>
+                    <a class="calibre cal4" data-calibre="40">.40</a>
+                    <a class="calibre cal5" data-calibre="45">.45</a>
+                    <p>Uso</p>
+                    <a class="uso civi" data-uso="civil">Civil</a>
+                    <a class="uso depo" data-uso="deportivo">Deportivo</a>
+                    <a class="uso fuer" data-uso="fuerza">Fuerza de Seguridad</a>
+                    <p>Color</p>
+                    <a class="color niqu" data-color="niquel"></a>
+                    <a class="color dost" data-color="dostonos"></a>
+                    <a class="color pavo" data-color="pavon"></a>
                      <!-- <li class="ui-last-child"><a href="#" class="actualizar mm">Actualizar</a></li> -->
-                 </ul>
-                 <a id="clear">Sin filtro</a>
-                 <a href="#mypanel" class="cerrar" data-rel="close"><span class="pe-7s-close-circle"></span></a>
+                    <a id="clear"><span class="pe-7s-trash"></span>Sin filtro</a>
             </div><!-- /panel -->
            
             <!-- END MENU FILTROS -->
@@ -379,8 +374,9 @@
                 });
                 $('.ui-content').delay(1000).removeClass('hide');
 
-            $('#filtros a.calibre').click(function(){
-                $('#filtros a').removeClass('current');
+            $('#myfilter a.calibre').click(function(){
+                $('#myfilter').panel('close');
+                $('#myfilter a').removeClass('current');
                 $(this).addClass('current');
                 var exceptcal = $(this).attr('data-calibre');
                 $('.images_1_of_4').each(function(i){
@@ -391,8 +387,9 @@
                     }       
                 });     
            });
-           $('#filtros a.uso').click(function(){
-                $('#filtros a').removeClass('current');
+           $('#myfilter a.uso').click(function(){
+                $('#myfilter').panel('close');
+                $('#myfilter a').removeClass('current');
                 $(this).addClass('current');
                 var exceptuso = $(this).attr('data-uso');
                 $('.images_1_of_4').each(function(i){
@@ -403,8 +400,9 @@
                     }       
                 });
            });
-           $('#filtros a.color').click(function(){
-                $('#filtros a').removeClass('current');
+           $('#myfilter a.color').click(function(){
+                $('#myfilter').panel('close');
+                $('#myfilter a').removeClass('current');
                 $(this).addClass('current');
                 var exceptcol = $(this).attr('data-color');
                 $('.images_1_of_4').each(function(i){
@@ -418,7 +416,8 @@
 
            
            $('a#clear').click(function(){
-                $('#filtros a').removeClass('current');
+                $('#myfilter').panel('close');
+                $('#myfilter a').removeClass('current');
                 $('.images_1_of_4').css('display','block');
            });
         });

@@ -184,19 +184,16 @@ h2{font-size:1em;margin-top:20px;}
 /*///////////////////////////////////////////*/
 
 /*//////////////////CATALOGO////////////////*/
+#catalogo{background:#fff !important;background-color:#fff !important;}
+#catalogo img {max-width:310px;}
 .filtrar span{
 	font-size:2em !important;
 	margin-left:0px !important; margin-top:10px;
 }
-#filtros{
-	width:100%;
-	height:auto;
-	overflow: hidden;
-	padding:10px 0px;
-	padding-bottom:0px;
-	background-color:#ccc;
+#myfilter{
+	width:190px;
 }
-#filtros span{
+#myfilter span{
 	position:relative;
 	float:left;
 	height:19px;
@@ -216,39 +213,41 @@ h2{font-size:1em;margin-top:20px;}
 	cursor:pointer;*/
 }
 .col12{width:100%;display:block;float:left;}
-/*a.cal1{text-align:center;background-image:url(../img/calibres.gif);background-position:0px 0px;width:59px;color:#666;}
-a.cal2{text-align:center;background-image:url(../img/calibres.gif);background-position:-75px 0px;width:58px;color:#666;}
-a.cal3{text-align:center;background-image:url(../img/calibres.gif);background-position:-151px 0px;width:60px;color:#666;}
-a.cal4{text-align:center;background-image:url(../img/calibres.gif);background-position:-234px 0px;width:70px;color:#666;}
-a.cal5{text-align:center;background-image:url(../img/calibres.gif);background-position:-323px 0px;width:72px;color:#666;}*/
-a.cal1,a.cal2,a.cal3,a.cal4,a.cal5{background-color:#fff;font-size:0.875em;color:#ccc;font-weight:normal;text-shadow:none;margin-right:10px;padding:5px 10px; border-radius:20px;}
+a.cal1,a.cal2,a.cal3,a.cal4,a.cal5{font-size:0.688em;display:block;float:none;padding-top:5px;padding-bottom:3px;margin-bottom:10px;padding-left:15px;font-weight:normal;text-shadow:none;margin-left:10px;}
+a.cal1{background-image:url(../img/calibres.gif);background-position:0px 0px;width:44px;color:#666;}
+a.cal2{background-image:url(../img/calibres.gif);background-position:-80px 0px;width:43px;color:#666;}
+a.cal3{background-image:url(../img/calibres.gif);background-position:-157px 0px;width:46px;color:#666;}
+a.cal4{background-image:url(../img/calibres.gif);background-position:-234px 0px;width:57px;color:#666;}
+a.cal5{background-image:url(../img/calibres.gif);background-position:-324px 0px;width:57px;color:#666;}
+
 a.cal5{margin-right:0px;}
-a.civi,a.depo,a.fuer{margin-top:15px;display:inline-block;background-repeat:no-repeat;padding-left:30px;padding-top:5px;text-shadow:none !important;color:#fff;font-size:0.750em;font-weight:normal;}
-a.civi{text-align:right;background-image:url(../img/civil-icon.png);background-position:0px 0px;}
-a.depo{text-align:right;background-image:url(../img/deportivo-icon.png);background-position:0px 0px;}
-a.fuer{text-align:right;background-image:url(../img/fuerza-icon.png);background-position:0px 0px;}
-a.niqu{float:none !important;background-image:url(../img/niquel.gif);background-position:0px 0px;}
-a.dost{float:none !important;margin-left:30px !important;margin-right:30px !important;background-image:url(../img/dostonos.gif);background-position:0px 0px;width:18px;color:#666;}
-a.pavo{float:none !important;background-image:url(../img/pavon.gif);background-position:0px 0px;width:18px;color:#666;}
-#filtros a#clear{
+a.civi,a.depo,a.fuer{margin-top:15px;display:block;background-repeat:no-repeat;padding-left:30px;padding-top:5px;text-shadow:none !important;color:#b1b1b1;margin-left:10px;font-size:0.750em;font-weight:normal;}
+a.civi{background-image:url(../img/civil-icon.gif);background-position:0px 0px;}
+a.depo{background-image:url(../img/deportivo-icon.gif);background-position:0px 0px;}
+a.fuer{background-image:url(../img/fuerza-icon.gif);background-position:0px 0px;}
+a.niqu{display:inline-block;width:22px;height:22px;margin-left:10px;background-image:url(../img/niquel.gif);background-position:0px 0px;}
+a.dost{display:inline-block;width:22px;height:22px;margin-left:20px;margin-right:20px;background-image:url(../img/dostonos.gif);background-position:0px 0px;}
+a.pavo{display:inline-block;width:22px;height:22px;background-image:url(../img/pavon.gif);background-position:0px 0px;}
+#myfilter a#clear{
 	position:relative;
-	float:left;
-	width:15px;
-	height:15px;
 	padding:0;
-	margin:3px 7px 0 7px;
-	display:inline-block;
+	margin-top:25px;
+	display:block;
+	font-size:1em;
+	font-weight:normal;
+	text-shadow:none;
 	cursor:pointer;
-	background-image:url(../img/clear.gif);
-	background-position:0px 0px;
+	display:inline-block;
 }
-#filtros a#clear:hover{background-position:0px -15px;}
-/*a.cal1:hover, a.cal1.current{background-position:0px -22px;color:#FFF;}
-a.cal2:hover, a.cal2.current{background-position:-75px -22px;color:#FFF;}
-a.cal3:hover, a.cal3.current{background-position:-151px -22px;color:#FFF;}
+#clear span{font-size:2.250em !important;display:inline-block;margin-top:-10px;}
+
+a.cal1:hover,a.cal2:hover,a.cal3:hover,a.cal4:hover,a.cal5:hover,a.cal1.current,a.cal2.current,a.cal3.current,a.cal4.current,a.cal5.current{font-size:0.688em;display:block;float:none;padding-top:5px;padding-bottom:3px;margin-bottom:10px;padding-left:15px;font-weight:normal;text-shadow:none;margin-left:20px;}
+a.cal1:hover, a.cal1.current{background-position:0px -22px;color:#FFF;}
+a.cal2:hover, a.cal2.current{background-position:-80px -22px;color:#FFF;}
+a.cal3:hover, a.cal3.current{background-position:-157px -22px;color:#FFF;}
 a.cal4:hover, a.cal4.current{background-position:-234px -22px;color:#FFF;}
-a.cal5:hover, a.cal5.current{background-position:-323px -22px;color:#FFF;}*/
-a.cal1:hover,a.cal2:hover,a.cal3:hover,a.cal4:hover,a.cal5:hover,a.cal1.current,a.cal2.current,a.cal3.current,a.cal4.current,a.cal5.current{background-color:#2189e2;font-size:1em;text-shadow:none;color:#fff;padding:5px 10px; border-radius:20px;}
+a.cal5:hover, a.cal5.current{background-position:-325px -22px;color:#FFF;}
+/*a.cal1:hover,a.cal2:hover,a.cal3:hover,a.cal4:hover,a.cal5:hover,a.cal1.current,a.cal2.current,a.cal3.current,a.cal4.current,a.cal5.current{background-color:#2189e2;font-size:1em;text-shadow:none;color:#fff;padding:5px 10px; border-radius:20px;}*/
 a.civi:hover, a.civi.current{background-position:0px -25px;color:#2189e2;}
 a.depo:hover, a.depo.current{background-position:0px -25px;color:#2189e2;}
 a.fuer:hover, a.fuer.current{background-position:0px -25px;color:#2189e2;}
