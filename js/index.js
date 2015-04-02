@@ -83,15 +83,15 @@ var app = {
         })
 
         $("#geo").on("pageshow",function(){
-            navigator.geolocation.getCurrentPosition(onSuccess, onError);
             $('#stores').hide();
+            navigator.geolocation.getCurrentPosition(onSuccess, onError);
             $('#resgeo').hide();
         })
         function onSuccess(position){
             $('.buscando').hide();
             lat = position.coords.latitude;
             lon = position.coords.longitude;
-            var distancia = 15;
+            var distancia = $('#slider-2').val();
             console.log(lat+" & "+lon);
             $.getJSON('http://appbersa.com.ar.brainloaded.com.ar/cercanos.php?lat='+lat+'&lon='+lon+'&k='+distancia,function(data){
                 if(data){

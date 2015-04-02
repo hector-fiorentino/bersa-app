@@ -105,6 +105,7 @@
 
             <div role="main" class="ui-content" style="padding:0px">
                 <div class="clear"></div>
+                <h2 class="titular">Pistolas</h2>
                  <div class="products-top">
                     <div class="grid_1_of_4 images_1_of_4" data-calibre="380" data-uso="civil" data-color="dostonos" style="border-bottom:1px solid #ccc;">
                         <a href="pistola-bersa-thunder-380.html">
@@ -283,14 +284,20 @@
             <div data-role="header" data-position="fixed" data-theme="b">
                <a href="#mypanel" data-display="push" class="ui-btn-left options" data-theme="b"><span class="pe-7s-menu"></a>
                <h1><img src="img/logo-white.png" class="logo-wh"></h1>
-               <a href="#" class="ui-btn-right catalogo-icon" data-theme="a"><img src="img/geo-icon-xhdpi.png" class="page-icon"></a>
+               <a href="#mygeo" class="ui-btn-right geoconfig" data-theme="b"><span class="pe-7s-config"></span></a>
             </div>
             <!-- END HEADER -->
-
+            <div data-role="panel" data-display="overlay" data-position="right" id="mygeo">
+                <form>
+                    <label for="slider-2">Distancia máxima (km):</label>
+                    <input type="range" name="slider-2" id="slider-2" data-highlight="true" min="5" max="200" value="15">
+                </form>
+            </div>
             <div role="main" class="ui-content" >
+                <h2 class="titular">Dónde?</h2>
                 <div id="resgeo">Distribuidores Bersa más próximos:</div>
                 <div class="buscando">
-                    <span class="pe-7s-map-marker"></span>
+                    <img src="img/ajax_loader_blue_512.gif" width="120"/>
                     <p>Buscando su ubicación</p>
                 </div>
                  <ul data-role="listview" data-split-icon="false" data-icon="false" data-split-theme="a" data-inset="true" id="stores">
@@ -344,18 +351,15 @@
         </div> /footer -->
     </div><!-- / Manuales page -->
             <div data-role="panel" data-display="overlay" id="mypanel">
-              <p class="nave">Navegación</p>
-                 <ul data-role="listview" data-inset="true" class="ui-listview ui-listview-inset ui-corner-all" data-theme="a" >
-                     <li class="ui-first-child"><a href="#pagemenuppal">Home</a></li>
-                     <li class="ui-li-has-count"><a href="#catalogo">Pistolas</a></li>
-                     <li class="ui-li-has-count"><a href="#geo">Dónde?</a></li>
-                     <li class="ui-li-has-count"><a href="#manuales">Manuales</a></li>
-                     <!-- <li class="ui-last-child"><a href="#" class="actualizar mm">Actualizar</a></li> -->
-                     <a href="#mypanel" class="cerrar" data-rel="close"><span class="pe-7s-close-circle"></span></a>
-                 </ul>
+                     <a href="#pagemenuppal" class="home"></a>
+                     <a href="#catalogo" class="catalogo"></a>
+                     <a href="#geo" class="geo noleft"></a>
+                     <a href="#manuales" class="manual"></a>
+                     <a href="#" class="share"></a>
+                     <a href="#mypanel" class="cerrar" data-rel="close"><span class="pe-7s-angle-left"></span></a>
             </div><!-- /panel -->
         <!-- <div id="geolocation" style="background-color:#000;width:320px; height:500px"></div> -->
-        <!--<script type="text/javascript" src="cordova.js"></script>-->
+        <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
         <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js"></script>
         <script type="text/javascript">
