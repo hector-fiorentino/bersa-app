@@ -18,7 +18,8 @@ h2{font-size:1em;margin-top:20px;}
 .hide{opacity:0;}
 #resgeo{display:none;}
 .titular{border-bottom:thin solid #b9d3e9;color:#2189e2;font-weight:normal;text-shadow:none;width:90%;margin-left:auto;margin-right:auto;margin-top:15px;padding-bottom:10px;font-size:1.250em;}
-
+.subtitle{border-bottom:thin solid #b9d3e9;color:#2189e2;font-weight:normal;text-shadow:none;width:90%;margin-left:auto;margin-right:auto;margin-bottom:0px;margin-top:10px;
+font-size:0.875em;}
 /*////////////////POPUPs/////////////////////////*/
 .ui-page .ui-popup .ui-title{background-image:none;background:#eaedf1 !important;color:#fff;font-size:1em;text-shadow:none;height:auto;padding:10px 0px 10px 0px !important;}
 .ui-popup h3{font-size:.9em;padding-top:10px;}
@@ -31,6 +32,7 @@ h2{font-size:1em;margin-top:20px;}
 .ui-bar-z .ui-title{height:90px !important;}
 .ui-page .ui-title {background-size:167px 23px;background-position:center center;height:50px;background-repeat: no-repeat;margin:0px 0px !important;padding:0px !important;}
 .salir span,.options span{font-size:2em !important; text-shadow:none;}
+.volver span{font-size:4em;text-shadow:none;margin-right:15px;}
 .options span{margin-left:0px !important;margin-top:10px;}
 
 /*.salir span,.options span{font-size:24px;}*/
@@ -133,6 +135,13 @@ h2{font-size:1em;margin-top:20px;}
 	margin-left:-160px;
 	bottom:0;
 }
+.swiper-container-detail{
+	position:relative;
+	width:100%;
+	max-height:285px;
+	background-color:#fff;
+}
+
 .swiper-container {
         width: 100%;
         height: 100%;
@@ -278,18 +287,39 @@ a.fuer:hover, a.fuer.current{background-position:0px -25px;color:#2189e2;}
 a.niqu:hover, a.niqu.current{background-position:0px -22px;}
 a.dost:hover, a.dost.current{background-position:0px -22px;}
 a.pavo:hover, a.pavo.current{background-position:0px -22px;}
+
+/*//////////////////DETAIL////////////////*/
+.description{padding:20px;font-size:0.875em;text-align:left;}
+#especif{font-size:0.875em;}
+#detail .titular{margin-bottom:0px;}
+
+/*/////////////////MANUALES////////////////*/
+.manualeslist {
+	list-style-type: none;
+	margin:0px;
+	padding:0px;
+	margin-top:20px;
+}
+.manualeslist li{
+	margin-bottom:15px;
+}
+.manualeslist li img{
+	display:inline-block;
+	vertical-align: middle;
+	width:56px;
+}
+.manualeslist li span{
+	margin-left:10px;
+	text-align:left;
+	display:inline-block;
+	vertical-align: middle;
+	width:230px;
+	font-size:0.875em;
+}
 		
 /*//////////////////MENU LATERAL////////////////*/
 #mypanel{background:#fff;width:100px;}
-/*#mypanel{width:140px;}
-#mypanel{width:140px;background:#fff;height:100%;}
-#mypanel .nave{font-size:1.25em;padding-top:20px;}
-#mypanel .ui-listview{border:none;background:none;box-shadow: none;margin:0px;padding:0px;}
-#mypanel .ui-listview a{display:block; margin-left:10px;border:none; padding:20px; width:35px !important; text-align:center; border-radius:40px;margin-bottom:15px;}
-#mypanel .ui-listview a i{color:#fff; font-size:2.5em;}
-#mypanel a.cerrar{padding:10px;background:none;margin-left:20px;}
-#mypanel a.cerrar span{color:#666;font-size:2em;}
-*/
+
 
 #catalogo :not(INPUT):not(TEXTAREA) {
     -webkit-user-select: none;
@@ -301,10 +331,6 @@ a.pavo:hover, a.pavo.current{background-position:0px -22px;}
 
 
 /*//////////////////FOOTER GENERAL//////////////*/
-.firma{float:right;margin-right:1.25em;font-size:.6em;margin-top:2em;}
-.firma span{display:inline-block;vertical-align:middle;background-image:url(../imagenes/logomedapps.png);background-size:100px 19px; width:100px;height:19px;}
-.volver{float:left; margin-left:1.25em;}
-.volver i{font-size:2.5em;}
 
 /*IMAGENES SEGUN DPIs*/
 @media screen and (-webkit-device-pixel-ratio: 1){
@@ -322,9 +348,10 @@ a.pavo:hover, a.pavo.current{background-position:0px -22px;}
 .page-icon{	height:45px;}
 }
 @media screen and (-webkit-device-pixel-ratio: 2){
-#logop{width:120px;height:60px;}
+#logop{width:120px;height:60px;margin-top:5px;}
 .ui-page .ui-title {padding-top:10px !important;}
 .options span,.filtrar span,.geoconfig span{margin-top:20px;}
+.volver span{margin-top:5px;}
 .home,.catalogo,.geo,.manual,.share{background-size:65px 65px;width:65px;padding-top:70px;}
 .logo-wh{height:30px;padding-left:30px;margin-top:10px;}
 .page-icon{	height:45px;}

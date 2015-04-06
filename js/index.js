@@ -33,16 +33,56 @@ var app = {
     // The scope of 'this' is the event. In order to call the 'receivedEvent'
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {
-            
+        var swiper;
+        var swiper2;
+        var lat;
+        var lon;
+
+        //PREVENT SWIPE PANEL IN SLIDER
+       // var menu_available = true;
+
+       // $(document).on("swiperight", function(event, ui) {
+        //    if (menu_available) $("#mygeo").panel("open");
+        //});
+
+       // $("#slider-2").on("slidestop", function( event, ui ) { 
+            //menu_available = false;
+            //window.setTimeout(function() {menu_available= true;},250);
+        //}); 
+
+        //INICIO
+        $('#ifcatalogo').css('height',$('body').height()+100);
+            swiper = new Swiper('.swiper-container', {
+                pagination: '.swiper-pagination',
+                paginationClickable: true
+            });
+        $('.ui-content').delay(1000).removeClass('hide');
+        //
+
         $("body").on('click','.logo-wh',function(event){
             event.preventDefault();
             $.mobile.navigate("#pagemenuppal");
             console.log('ir al home');
         });
-        $("#mypanel").panel();
+        //$("#mypanel").panel();
+        $("#pagemenuppal").on("pageshow",function(){
+                
+        })
         $("#catalogo").on("pageshow",function(){
 
         });
+
+        $("#detail").on("pageshow",function(){
+            swiper2 = null;
+            //if(swiper2==null){
+                swiper2 = new Swiper('.swiper-container-detail', {
+                    pagination: '.swiper-pagination-detail',
+                    paginationClickable: true,
+                    nextButton: '.swiper-button-next',
+                    prevButton: '.swiper-button-prev'
+                });
+            //}
+        })
 
         $("#mapa").on("pageshow",function(){
             //window.location="maps.html";
@@ -78,6 +118,22 @@ var app = {
             })
         })
 
+        $('#catalogo').on('click','.pistola',function(ev){
+            var url = "";
+            url += $(this).attr('rel');
+            url +=".html";
+            $("#contenido").empty();
+            $.get(url,{},function(exito){
+                if(exito){
+                    $('#contenido').html(exito);
+                    $.mobile.navigate('#detail');
+                }
+            }).fail(function(error){
+                //alert(JSON.stringify(error));
+                alert("No se pudo cargar la página");
+            })
+        })
+
         $("#stores").on('click','.mapas',function(ev){
             ID = $(this).attr('rel');
         })
@@ -86,11 +142,21 @@ var app = {
             $('#stores').hide();
             navigator.geolocation.getCurrentPosition(onSuccess, onError);
             $('#resgeo').hide();
+            $( "#slider-2" ).on( 'slidestop', function( event ) {
+                tiendasCercanas();
+                $("#mygeo").panel('close');
+            });
         })
         function onSuccess(position){
             $('.buscando').hide();
             lat = position.coords.latitude;
             lon = position.coords.longitude;
+            tiendasCercanas();
+        }
+        function onError(error){
+            alert("<strong>No hemos podido encontrar su ubicación</strong><br><p>Aseguresé de tener activo el GPS</p>");
+        }
+        function tiendasCercanas(){
             var distancia = $('#slider-2').val();
             console.log(lat+" & "+lon);
             $.getJSON('http://appbersa.com.ar.brainloaded.com.ar/cercanos.php?lat='+lat+'&lon='+lon+'&k='+distancia,function(data){
@@ -129,11 +195,6 @@ var app = {
                     alert("Error de conexión con el servidor.");
                 })
             })
-
-        }
-        
-        function onError(error){
-            alert("<strong>No hemos podido encontrar su ubicación</strong><br><p>Aseguresé de tener activo el GPS</p>");
         }
     }
 };
