@@ -214,6 +214,10 @@ font-size:0.875em;}
 }
 .left{float:left;display:block;width:260px;}
 .right{float:right;}
+#namestore{color:#2189e2;}
+#addressstore{color:#2189e2;}
+#locationstore{color:#2189e2;}
+#phone{color:#2189e2;}
 /*///////////////////////////////////////////*/
 
 /*//////////////////CATALOGO////////////////*/
@@ -310,7 +314,7 @@ a.pavo:hover, a.pavo.current{background-position:0px -22px;}
 }
 .manualeslist li span{
 	margin-left:10px;
-	text-align:left;
+	text-align:center;
 	display:inline-block;
 	vertical-align: middle;
 	width:230px;

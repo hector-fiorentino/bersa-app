@@ -61,8 +61,7 @@ var app = {
 
         $("body").on('click','.logo-wh',function(event){
             event.preventDefault();
-            $.mobile.navigate("#pagemenuppal");
-            console.log('ir al home');
+            $('#mypanel').panel('open');
         });
         //$("#mypanel").panel();
         $("#pagemenuppal").on("pageshow",function(){
@@ -86,6 +85,11 @@ var app = {
 
         $("#mapa").on("pageshow",function(){
             //window.location="maps.html";
+            $(".preload").show();
+            $("#namestore").empty();
+            $("#locationstore").empty();
+            $("#addressstore").empty();
+            $("#phone").empty();
             $.getJSON('http://appbersa.com.ar.brainloaded.com.ar/store.php?id='+ID, function(data){
                 if(data){
                     var lat2 = data.latitude;
@@ -111,9 +115,11 @@ var app = {
                           map: map,
                           icon: image2
                     });
-                    $("#namestore").empty().html(data.store);
-                    $("#locationstore").empty().html(data.location);
-                    $("#addressstore").empty().html(data.address);
+                    $("#namestore").html(data.store);
+                    $("#locationstore").html('<i class="pe-7s-global"></i> '+data.location);
+                    $("#addressstore").html('<i class="pe-7s-map-marker"></i> '+data.address);
+                    $("#phone").html('<i class="pe-7s-call"></i> '+data.phone);
+                    $(".preload").hide();
                 }
             })
         })
@@ -138,7 +144,14 @@ var app = {
             ID = $(this).attr('rel');
         })
 
+        $('#manuales').on('click','.pdf',function(ev){
+            ev.preventDefault();
+            var url = $(this).attr('rel');
+            window.open(url, '_system', 'location=yes');
+        })
+
         $("#geo").on("pageshow",function(){
+            $('.buscando').show();
             $('#stores').hide();
             navigator.geolocation.getCurrentPosition(onSuccess, onError);
             $('#resgeo').hide();
@@ -148,7 +161,6 @@ var app = {
             });
         })
         function onSuccess(position){
-            $('.buscando').hide();
             lat = position.coords.latitude;
             lon = position.coords.longitude;
             tiendasCercanas();
@@ -161,6 +173,7 @@ var app = {
             console.log(lat+" & "+lon);
             $.getJSON('http://appbersa.com.ar.brainloaded.com.ar/cercanos.php?lat='+lat+'&lon='+lon+'&k='+distancia,function(data){
                 if(data){
+                    $('.buscando').hide();
                     $('#stores').empty();
                     $('#stores').show();
                     $('#resgeo').show();
