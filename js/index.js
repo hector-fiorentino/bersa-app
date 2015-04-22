@@ -38,6 +38,8 @@ var app = {
         var lat;
         var lon;
 
+        //window.open = cordova.InAppBrowser.open;
+
         //PREVENT SWIPE PANEL IN SLIDER
        // var menu_available = true;
 
@@ -126,6 +128,11 @@ var app = {
 
         $('#catalogo').on('click','.pistola',function(ev){
             var url = "";
+            if(current_lang=='es'){
+                url += "spanish-";
+            }else{
+                url += "english-";
+            }
             url += $(this).attr('rel');
             url +=".html";
             $("#contenido").empty();
@@ -145,10 +152,27 @@ var app = {
         })
 
         $('#manuales').on('click','.pdf',function(ev){
-            ev.preventDefault();
-            var url = $(this).attr('rel');
-            window.open(url, '_system', 'location=yes');
+           ev.preventDefault();
+           var url = "";
+           if(current_lang=='es'){
+                url = $(this).attr('rel');
+            }else{
+                url = $(this).attr('href');
+            }
+           console.log(url);
+           // var ref = window.open(url, '_blank','location=yes');
+           window.open(url, '_system', 'location=yes');
+
+           //iabRef.addEventListener('exit', iabClose);
+            //ref.c
+            //window.open(url, '_system', 'location=yes');
         })
+        // Global InAppBrowser reference
+    
+
+    // Inject our custom JavaScript into the InAppBrowser window
+    //
+    
 
         $("#geo").on("pageshow",function(){
             $('.buscando').show();
@@ -209,6 +233,7 @@ var app = {
                 })
             })
         }
+     
     }
 };
 

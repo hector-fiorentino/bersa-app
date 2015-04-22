@@ -1,5 +1,6 @@
 @charset "utf-8";
-
+.english{display:none;}
+.spanish{display:none;}
 /*////////////////ELEMENTOS GENERALES/////////////*/
 .ui-page{background-color:#eaedf1 !important;}
 .ui-bar-b .ui-title{padding-left:30px !important; background-color:#2189e2 !important;text-align:left !important;}
@@ -312,6 +313,9 @@ a.pavo:hover, a.pavo.current{background-position:0px -22px;}
 	vertical-align: middle;
 	width:56px;
 }
+.manualeslist li a{
+	text-decoration: none;
+}
 .manualeslist li span{
 	margin-left:10px;
 	text-align:center;
@@ -338,7 +342,7 @@ a.pavo:hover, a.pavo.current{background-position:0px -22px;}
 
 /*IMAGENES SEGUN DPIs*/
 @media screen and (-webkit-device-pixel-ratio: 1){
-	#logop{width:180px;height:90px;}
+#logop{width:180px;height:90px;}
 .ui-page .ui-title {}
 .home,.catalogo,.geo,.manual,.share{background-size:65px 65px;width:65px;padding-top:70px;}
 .logo-wh{height:40px;padding-left:30px;margin-top:3px;}
@@ -373,3 +377,21 @@ a.pavo:hover, a.pavo.current{background-position:0px -22px;}
 .options span{margin-top:12px !important;}
 .catalogo-icon{margin-top:90px;}
 }
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px)  { 
+	#logop{margin-top:20px;}
+	.ui-page .ui-title {padding-top:60px;}
+	.swiper-container-detail{
+	max-height:438px;
+}
+
+.swiper-container {
+		left:50%;
+		margin-left:-260px !important;
+        max-width:520px;
+        height:438px;
+ }
+ .swiper-container{position:absolute !important;top:50% !important;margin-top:-219px !important;}	
+}
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait) and (-webkit-min-device-pixel-ratio: 2) { 
+	.ui-page .ui-title {padding-top:60px;}
+} 

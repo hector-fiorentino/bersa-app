@@ -43,6 +43,7 @@
         <title>Bersa App</title>
     </head>
     <body>
+
         <!-- Menu Page -->
         <div data-role="page" id="pagemenuppal">
             
@@ -58,8 +59,9 @@
                 <div class="swiper-container">
                     <div class="swiper-wrapper">
                         <div class="swiper-slide"><img src="img/carousel/modelo1.png"/></div>
-                        <div class="swiper-slide"><img src="img/carousel/modelo1.png"/></div>
-                        <div class="swiper-slide"><img src="img/carousel/modelo1.png"/></div>
+                        <div class="swiper-slide"><img src="img/banner1.png"/></div>
+                        <div class="swiper-slide"><img src="img/banner2.png"/></div>
+                        <div class="swiper-slide"><img src="img/banner4.png"/></div>
                     </div>
                     <div class="swiper-pagination"></div>
                     </div>
@@ -67,9 +69,9 @@
 
         <div data-role="footer" data-theme="z">
             <ul id="zocalo">
-                <li><a href="#catalogo" class="catalogo">Pistolas</a></li>
-                <li><a href="#geo" class="geo">Donde?</a></li>
-                <li><a href="#manuales" class="manual">Manuales</a></li>
+                <li><a href="#catalogo" class="catalogo"><span class="spanish">Pistolas</span><span class="english">Pistols</span></a></li>
+                <li><a href="#geo" class="geo"><span class="spanish">Donde?</span><span class="english">Where?</span></a></li>
+                <li><a href="#manuales" class="manual"><span class="spanish">Manuales</span><span class="english">Handbooks</span></a></li>
             </ul>
             <img src="img/zocalo-xhdpi.png" id="zocalo-img" width="320">
         </div><!-- /footer -->
@@ -88,29 +90,33 @@
             <!-- END HEADER -->
             <!-- MENU FILTROS -->
             <div data-role="panel" data-display="overlay" data-position="right" id="myfilter">
-                    <p>Calibre</p>
+                    <p class="spanish">Calibre</p>
+                    <p class="english">Caliber</p>
                     <a class="calibre cal1" data-calibre="22">.22</a>
                     <a class="calibre cal2" data-calibre="380">.380</a>
                     <a class="calibre cal3" data-calibre="9">9mm</a>
                     <a class="calibre cal4" data-calibre="40">.40</a>
                     <a class="calibre cal5" data-calibre="45">.45</a>
-                    <p>Uso</p>
-                    <a class="uso civi" data-uso="civil">Civil</a>
-                    <a class="uso depo" data-uso="deportivo">Deportivo</a>
-                    <a class="uso fuer" data-uso="fuerza">Fuerza de Seguridad</a>
+                    <p class="spanish">Uso</p>
+                    <a class="uso civi spanish" style="display:none" data-uso="civil">Civil</a>
+                    <a class="uso civi english" style="display:none" data-uso="civil">Personal</a>
+                    <a class="uso depo spanish" style="display:none" data-uso="deportivo">Deportivo</a>
+                    <a class="uso depo english" style="display:none" data-uso="deportivo">Sport</a>
+                    <a class="uso fuer spanish" style="display:none" data-uso="fuerza">Fuerza de Seguridad</a>
+                    <a class="uso fuer english" style="display:none" data-uso="fuerza">Law Enforcement</a>
                     <p>Color</p>
                     <a class="color niqu" data-color="niquel"></a>
                     <a class="color dost" data-color="dostonos"></a>
                     <a class="color pavo" data-color="pavon"></a>
                      <!-- <li class="ui-last-child"><a href="#" class="actualizar mm">Actualizar</a></li> -->
-                    <a id="clear"><span class="pe-7s-trash"></span>Sin filtro</a>
+                    <a id="clear"><span class="pe-7s-trash"></span><strong class="spanish">Sin filtro</strong><strong class="english">Clean</strong></a>
             </div><!-- /panel -->
            
             <!-- END MENU FILTROS -->
 
             <div role="main" class="ui-content" style="padding:0px">
                 <div class="clear"></div>
-                <h2 class="titular">Pistolas</h2>
+                <h2 class="titular spanish">Pistolas</h2><h2 class="titular english">Pistols</h2>
                  <div class="products-top">
                     <div class="grid_1_of_4 images_1_of_4" data-calibre="380" data-uso="civil" data-color="dostonos" style="border-bottom:1px solid #ccc;">
                         <a href="#" rel="thunder-380" class="pistola">
@@ -254,15 +260,15 @@
                      </a>
                  </div>
                     <div class="grid_1_of_4 images_1_of_4" data-calibre="40" data-uso="civil" data-color="pavon" style="border-bottom:1px solid #ccc;">
-                     <a href="#" rel="bp40cc" class="pistola">
+                     <a href="#" rel="BP40cc" class="pistola">
                         <img src="img/th_armas/BP40CC-Pav-1.jpg" alt=""><span class="zoom-icon"></span>
-                        <img src="img/logos/BP9CC.gif" alt="BP9CC dos tonos">
+                        <img src="img/logos/BP40CC.gif" alt="BP9CC dos tonos">
                      </a>
                  </div>
                         <div class="grid_1_of_4 images_1_of_4" data-calibre="380" data-uso="civil" data-color="pavon" style="border-bottom:1px solid #ccc;">
-                     <a href="#" rel="bp380cc" class="pistola">
+                     <a href="#" rel="BP380cc" class="pistola">
                         <img src="img/th_armas/BP380CC-Pav-1.jpg" alt=""><span class="zoom-icon"></span>
-                        <img src="img/logos/BP9CC.gif" alt="BP9CC dos tonos">
+                        <img src="img/logos/BP380CC.gif" alt="BP9CC dos tonos">
                      </a>
                  </div>
                  
@@ -313,16 +319,17 @@
             <!-- END HEADER -->
             <div data-role="panel" data-display="overlay" data-position="right" id="mygeo">
                 <form>
-                    <label for="slider-2">Distancia máxima (km):</label>
+                    <p class="spanish">Distancia máxima (km):</p>
+                    <p class="english">Maximum Distance (km):</p>
                     <input type="range" name="slider-2" id="slider-2" data-highlight="true" min="5" max="200" value="15">
                 </form>
             </div>
             <div role="main" class="ui-content" >
-                <h2 class="titular">Dónde?</h2>
-                <div id="resgeo">Distribuidores Bersa más próximos:</div>
+                <h2 class="titular spanish">Dónde?</h2><h2 class="titular english">Where?</h2>
+                <div id="resgeo"><span class="spanish">Distribuidores Bersa más próximos:</span><span class="english">Closest Bersa dealers:</span></div>
                 <div class="buscando">
                     <img src="img/ajax_loader_blue_512.gif" width="120"/>
-                    <p>Buscando su ubicación</p>
+                    <p class="spanish">Buscando su ubicación</p><p class="english">Serching your location</p>
                 </div>
                  <ul data-role="listview" data-split-icon="false" data-icon="false" data-split-theme="a" data-inset="true" id="stores">
                     
@@ -369,12 +376,12 @@
             <!-- END HEADER -->
 
             <div role="main" class="ui-content" >
-                <h2 class="titular">Manuales</h2>
+                <h2 class="titular spanish">Manuales</h2><h2 class="titular english">Handbooks</h2>
                 <ul class="manualeslist">
-                    <li><a href="#" rel="manuales/Thunder-pro-español_baja.pdf" class="pdf"><img src="img/pdf.png" align="absmiddle" height="75"/><span>Manual de instrucción y seguridad para PRO (español)</span></a></li>
-                    <li><a href="#" rel="manuales/Thunder-español-baja.pdf" class="pdf"><img src="img/pdf.png" align="absmiddle" height="75"/><span>Manual de instrucción y seguridad de Thunder 380, 22, 22-6 y 32 (español)</span></a></li>
-                    <li><a href="#" rel="manuales/M-cast-TH9-40yMTH9-40y45.pdf" class="pdf"><img src="img/pdf.png" align="absmiddle" height="75"/><span>Manual de instrucción y seguridad de Thunder 9 y 40 y Mini Thunder 9, 40 y 45 (español)</span></a></li>
-                    <li><a href="#" rel="manuales/BP-español-baja.pdf" class="pdf"><img src="img/pdf.png" align="absmiddle" height="75"/><span>Manual de instrucción y seguridad de BP9CC, BP380CC y BP40CC(español)</span></a></li>
+                    <li><a href="http://www.bersa.com.ar/manuales/Thunder-pro-english_baja.pdf" rel="http://www.bersa.com.ar/manuales/Thunder-pro-espa%C3%B1ol_baja.pdf" class="pdf"><img src="img/pdf.png" align="absmiddle" height="75"/><span class="spanish" style="display:none">Manual de instrucción y seguridad para PRO (español)</span><span class="english" style="display:none">Safety warnings and instruction handbook for Thunder PRO (english)</span></a></li>
+                    <li><a href="http://www.bersa.com.ar/manuales/Thunder-english-baja.pdf" rel="http://www.bersa.com.ar/manuales/Thunder-espa%C3%B1ol-baja.pdf" class="pdf"><img src="img/pdf.png" align="absmiddle" height="75"/><span class="spanish" style="display:none">Manual de instrucción y seguridad de Thunder 380, 22, 22-6 y 32 (español)</span><span class="english" style="display:none">Safety warnings and instruction handbook for Thunder 380, 22, 22-6 y 32 (English)</span></a></li>
+                    <li><a href="http://www.bersa.com.ar/manuales/M-cast-TH9-40yMTH9-40y45.pdf" rel="http://www.bersa.com.ar/manuales/M-cast-TH9-40yMTH9-40y45.pdf" class="pdf"><img src="img/pdf.png" align="absmiddle" height="75"/><span class="spanish" style="display:none">Manual de instrucción y seguridad de Thunder 9 y 40 y Mini Thunder 9, 40 y 45 (español)</span><span class="english" style="display:none">Safety warnings and instruction handbook for Thunder 9 y 40 y Mini Thunder 9, 40 y 45 (español)</span></a></li>
+                    <li><a href="http://www.bersa.com.ar/manuales/BP-english-baja.pdf" rel="http://www.bersa.com.ar/manuales/BP-espa%C3%B1ol-baja.pdf" class="pdf"><img src="img/pdf.png" align="absmiddle" height="75"/><span class="spanish" style="display:none" >Manual de instrucción y seguridad de BP9CC, BP380CC y BP40CC(español)</span><span class="english" style="display:none">Safety warnings and instruction handbook for BP9CC, BP380CC and BP40CC(english)</span></a></li>
                 </ul>
             </div><!-- /content -->
 
@@ -399,7 +406,19 @@
             var ID  = 0;
             var lat = 0;
             var lon = 0;
+            var current_lang;
             $(document).ready(function(){
+                var lang = navigator.language.split("-");
+                 current_lang=(lang[0]);
+                if(current_lang=='es'){
+                  $('.spanish').css('display','block');
+                  $('.manualeslist a span.spanish').css('display','inline-block');
+                  $('#clear strong.spanish').css('display','inline-block');
+                }else{
+                  $('.english').css('display','block');
+                  $('.manualeslist a span.english').css('display','inline-block');
+                  $('#clear strong.english').css('display','inline-block');
+                }
                 //alert($('body').height());
                 $("[data-role=panel]").panel().enhanceWithin();
                 
